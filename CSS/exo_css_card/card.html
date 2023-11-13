@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css_Card</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+
+<div class="bloc">   
+<h1>Paiement par Carte Bancaire</h1>  
+
+<div class="info">
+    <form action="">
+        <div>
+            <label for="card_number">Numéro de carte<br> </label>
+            <input type="text" name="card_number" id="card_number" placeholder="**** **** **** ****">
+        </div>
+        <div>
+            <label for="card_name">Nom du titulaire<br></label>
+            <input type="text" name="card_name" id="card_name" placeholder="Nom Complet">
+        </div>
+        <div class="wrap">
+            <div class="wrap1">
+            <label for="card_date">Date d'Expiration<br></label>
+            <input type="text" name="card_date" id="card_date" placeholder="MM/AA">
+            </div>
+            <div class="wrap2">
+            <label for="card_cvv">CVV</label><br>
+            <input type="text" name="card_cvv" id="card_cvv" placeholder="***">
+            </div>
+        </div>
+        <div class="bouton">
+            <input type="submit" value="Payer" id="payer">
+        </div>
+    </form>
+</div>
+</div>    
+</body>
+</html>

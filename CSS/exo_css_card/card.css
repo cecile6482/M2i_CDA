@@ -1,0 +1,65 @@
+body {
+    background-color: #f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bloc {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #cecece;
+}
+
+.bloc h1 {
+    font-size: 40px;
+    margin: 50px;
+    padding: 10px;
+    text-align: center;
+}
+
+.info {
+    margin: 20px;
+}
+
+.info label {
+    font-size: 25px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.info input {
+    margin: 10px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+}
+
+#card_number, #card_name {
+    width: 100%;
+}
+
+.wrap {
+    display: table;
+}
+
+.wrap1, .wrap2 {
+    display: table-cell;
+}
+
+.bouton {
+    margin: 20px;
+    text-align: center;
+}
+
+#payer {
+    background-color: #027BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
