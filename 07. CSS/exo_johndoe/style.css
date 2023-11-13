@@ -1,0 +1,84 @@
+body {
+    background-color: #ABC580;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #e0dddd;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    padding: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    padding: 0.5em;
+}
+
+nav {
+    text-align: center;
+    padding: 0.5em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e0dddd;
+    padding: 0.5em;
+}
+
+nav a:hover {
+    color: #ABC580;
+    background-color: #e0dddd;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #a640b8;
+  }
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin: 1em;
+}
+
+input[type=text], input[type=date], select, textarea {
+    width: 70%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #a640b8;
+    color: #e0dddd;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    float: right;
+}
+

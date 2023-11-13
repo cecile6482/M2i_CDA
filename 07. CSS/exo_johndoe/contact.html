@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>John Doe</h1>
+    <h2>Contact</h2>
+    <nav>  
+            <a href="index.html">Accueil</a>
+            <a href="horraires.html">Horraires</a>
+            <a href="contact.html">Contact</a> 
+    </nav>
+
+    <fieldset>
+    <legend>Qui êtes-vous ?</legend>
+    <form action="">
+        <label for="Nom">Nom</label> <input type="text" name="Nom" id="Nom" placeholder="DOE"> <br>
+        <label for="Prénom">Prénom</label> <input type="text" name="Prénom" id="Prénom" placeholder="John"> <br>
+        <label for="Date de naissance">Date de naissance</label> <input type="date" name="Date de naissance" id="Date de naissance" placeholder="01/01/1970"> <br>
+        <!-- sexe Homme ou Femme -->
+        <label for="Sexe">Sexe</label>  <input type="radio" name="Sexe" id="Homme"> <label for="Homme">Homme</label>  <input type="radio" name="Sexe" id="Femme"> <label for="Femme">Femme</label> <br>
+    </form>
+    </fieldset>
+
+    <fieldset>
+    <legend>Sujet de votre question</legend>
+    <form action="">
+        <label for="urgent">Est-ce urgent ?</label> <input type="checkbox" name="urgent" id="urgent"> <br>
+        <label for="Sujet">Sujet</label> <select name="Sujet" id="Sujet">
+            <optgroup label="Compte">
+            <option value="Compte">Je n'arrive pas à acceder à mon compte</option>
+            <option value="Compte">Je crois que j'ai été piraté</option>
+            <option value="Compte">Je n'arrive pas à changer mon mot de passe</option>
+            <option value="Compte">J'ai perdu mes identifiants</option>
+            </optgroup>
+            <optgroup label="Achat">
+            <option value="Achat">Je n'arrive pas à confirmer mon achat</option>
+            <option value="Achat">J'aimerai avoir des nouvelles de ma livraison</option>
+            </optgroup>
+        </select> 
+    </form>
+    </fieldset>
+
+    <fieldset>
+    <legend>Commentaire</legend>
+    <form action="">
+        <label for="Commentaire">Notes :</label> <br> <textarea name="Commentaire" id="Commentaire" cols="30" rows="10"></textarea>
+    </form>
+    </fieldset>
+
+    <button>
+        Envoyer ma question
+    </button>
+</body>
+</html>
