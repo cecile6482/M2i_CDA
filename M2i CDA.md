@@ -1,21 +1,21 @@
 ## V 27/11/2023
-- Culture Digitale 
+	- Culture Digitale 
 
-- Markdown 
+	- Markdown 
 	> cours101.md
 	> exos 1 (+3 png) 
 
-- CLI 
+	- CLI 
 	> cours101.md
 	> Exercice_CLI 
 	
-- Git 
+	- Git 
     > gitcours101.md	
 	
 
 ## L 30/10/2023
 
-- Git : gitcours101 (suite) 
+	- Git : gitcours101 (suite) 
 	> créer un commit 
 	> Exercices > Exo 1 OK
 	> revenir à un commit précédent
@@ -33,7 +33,7 @@
 			
 ## M 31/10/2023 
 
-- Git : gitremote.md (suite) 
+	- Git : gitremote.md (suite) 
 	> git pull 
 	> exercice_remote.md 
 	> gitcours102.md
@@ -43,10 +43,10 @@
 	
 ## J 02/11/2023
 
-- Git : gitcours102 (suite)
+	- Git : gitcours102 (suite)
 	> exo_rebase
 	
-- Algo 
+	- Algo 
 	> cours_algo.md
 	> chocoBLAST
 	> variables 
@@ -74,59 +74,68 @@
 		
 ## L 06/11/2023
 
-- Algo 
-> exercice 14
-> exercice 15 
-> exercice 15 bis 
-> exercice 16
-> exercice 17 
+	- Algo 
+	> exercice 14
+	> exercice 15 
+	> exercice 15 bis 
+	> exercice 16
+	> exercice 17 
 
 ## M 07/11/2023
 
-- Algo 
-> Les fonctions 
-> Exercice 18 
-> Les procédures 
-> Exercice (training) 
-> Les tableaux 
-> Exercice 19
-> Exercice 20 
-> Tableaux à deux dimensions 
-> Exercice 21                                                                                  
+	- Algo 
+	> Les fonctions 
+	> Exercice 18 
+	> Les procédures 
+	> Exercice (training) 
+	> Les tableaux 
+	> Exercice 19
+	> Exercice 20 
+	> Tableaux à deux dimensions 
+	> Exercice 21                                                                                  
 
 ## M 08/11/2023
 
-- HTML 
-> les bases 
-> les tableaux 
-> les formulaires 
-> exo1, 2 et 3 site web 
+	- HTML 
+	> les bases 
+	> les tableaux 
+	> les formulaires 
+	> exo1, 2 et 3 site web 
 
 ## J 09/11/2023
 
-- HTML 
-> les formulaires (suite) 
-> La Sémantique html 
-> exo 4, 5 html 
+	- HTML 
+	> les formulaires (suite) 
+	> La Sémantique html 
+	> exo 4, 5 html 
 
-- CSS
-> exo css card
-> CSScours.md 
+	- CSS
+	> exo css card
+	> CSScours.md 
 
 ## V 10/11/2023 
 
-- CSS
-> CSScours.md (suite) 
-> les pseudo-class
-> Jeu: CSS Dinner (32 levels ^^) 
-> les propriétés CSS
-> CSSmesure.md
-> box-model 
-> display 
-> exo_cactus 
+	- CSS
+	> CSScours.md (suite) 
+	> les pseudo-class
+	> Jeu: CSS Dinner (32 levels ^^) 
+	> les propriétés CSS
+	> CSSmesure.md
+	> box-model 
+	> display 
+	> exo_cactus 
 
 ## L 13/11/23
 
-> revision HTML/CSS 
-> recréation d'un site web (exo_johndoe)
+	> revision HTML/CSS 
+	> recréation d'un site web (exo_johndoe)
+	> correction 
+	> Github Pages
+	> Les couleurs en CSS 
+	> Révision display : block, inline, inline-block
+	> Float 
+	> Flexbox
+> [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)  
+> [Flexbox Froggy](https://flexboxfroggy.com/#fr)
+
 
