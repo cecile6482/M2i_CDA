@@ -1,4 +1,6 @@
-## V 27/11/2023
+# Formation M2i CDA 26 Octobre 2023 - 24 Janvier 2025
+
+## V 27/10/2023
 	- Culture Digitale 
 
 	- Markdown 
@@ -138,4 +140,16 @@
 > [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)  
 > [Flexbox Froggy](https://flexboxfroggy.com/#fr)
 
+## M 14/11/23
 
+	> Correction Flexbox Froggy
+	> Flexbox (suite)
+	> Création de layouts avec Flexbox
+	> Exercice _ exemple B (Flexbox)
+	> Les variables CSS
+	> Le Grid CSS (CSS_grid.md)
+	> Demo Grid CSS
+	> Grid Garden
+> [Grid Garden](https://cssgridgarden.com/#fr)  
+	
+	> Correction Grid Garden
