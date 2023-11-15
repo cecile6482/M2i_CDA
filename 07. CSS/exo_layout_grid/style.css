@@ -4,7 +4,7 @@
     --black : black;
     --red : red;
     --yellow :yellow;
-    --size-font : 42px;
+    --size-font : 32px;
 }
 
 * {
@@ -15,14 +15,15 @@
 body {
     display: grid;
     grid-template-areas: 
-        "header header header"
-        "side middle sideb"
-        "footer footer footer";
+        "header header header header"
+        "side middle middle sideb"
+        "footer footer footer footer";
 }
 
 .header {
     grid-area: header;
     height: 100px;
+    padding: 30px;
     background-color: var(--white);
     text-align: center;
     font-size: var(--size-font);
@@ -53,4 +54,6 @@ body {
     text-align: center;
     font-size: var(--size-font);
 }
+
+
 

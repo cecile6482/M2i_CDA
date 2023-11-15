@@ -153,3 +153,13 @@
 > [Grid Garden](https://cssgridgarden.com/#fr)  
 	
 	> Correction Grid Garden
+
+## M 15/11/23
+
+	> Grid CSS (suite)
+	> Exercice Layout Grid CSS
+	> Responsive Design
+	> Media Queries
+	
+
+	
