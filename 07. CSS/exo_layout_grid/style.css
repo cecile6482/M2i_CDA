@@ -1,0 +1,55 @@
+:root {
+    --white : white;
+    --blue : blue;
+    --black : black;
+    --red : red;
+    --yellow :yellow;
+    --size-font : 42px;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "side middle sideb"
+        "footer footer footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--white);
+    padding: 30px;
+    margin: 0;
+    text-align: center;
+    font-size: var(--size-font);
+}
+
+.side {
+    grid-area: side;
+    background-color: var(--red);
+}
+
+.sideb {
+    grid-area: sideb;
+    background-color: var(--yellow);
+}
+
+.middle {
+    grid-area: middle;
+    background-color: var(--blue);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+    font-size: var(--size-font);
+}
+
