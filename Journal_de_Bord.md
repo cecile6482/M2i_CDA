@@ -160,6 +160,10 @@
 	> Exercice Layout Grid CSS
 	> Responsive Design
 	> Media Queries
+	> Exercice Responsive Design
+	> Exercice Responsive Design 2
+	> Nesting
+	> Exercice objet_a_vendre
 	
 
 	
