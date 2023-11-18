@@ -1,10 +1,11 @@
 :root {
-    --main-color: #eee;
-    --header-color: rgb(23, 48, 101);
-    --inside-header: #F8E37A;
+    --main-color: rgb(23, 48, 101);
+    --header-color: #eee;
+    --inside-header: #333;
     --card-bg: #fff;
-    --text-h1: #333;
-    --text-h2: #333;
+    --card-hover: #F8E37A;
+    --text-h1: #F8E37A;
+    --text-h2: #F8E37A;
     --text-h3: #333;
 }
 
@@ -17,6 +18,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     background-color: var(--main-color);
+    cursor: url('cursor.png'), auto;
 }
 
 
@@ -55,7 +57,7 @@ nav li {
 }
 
 nav ul li a {
-    color: #333;
+    color: var(--header-color);
     text-decoration: none;
     background-color: var(--inside-header);
     border-radius: 50px;
@@ -119,6 +121,7 @@ h3 {
 .item:hover {
     transform: translateY(-5px); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--card-hover);
 }
 
 .item p {
