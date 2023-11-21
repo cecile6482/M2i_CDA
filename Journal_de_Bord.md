@@ -169,5 +169,15 @@
 
 ## M 21/11/23
 
-
+	> Cours JS 
+	> Structures itératives (page 44)
+	> For, While, Do While
+	> Continue, Break
+	> Exercice 7
+	> Exercice 8
+	> Exercice 9
+	> Exercice 10
+	> Exercice 11
+	> Exercice 12
+	> Exercice 13
 	
