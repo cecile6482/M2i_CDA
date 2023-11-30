@@ -180,4 +180,12 @@
 	> Exercice 11
 	> Exercice 12
 	> Exercice 13
+
+## M 22/11/23
+
+	> Cours JS (suite)
+	> Les fonctions (page 49)
+	> Exercice 14
+	> Exercice 15
+	> Exercice 16
 	
