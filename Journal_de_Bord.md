@@ -194,5 +194,13 @@
 ## L 11/12/23
 
 	> Cours VueJS (suite)
+	> Exercice demo-component-emit (collectif)
+	> Exercice demo-component-emit-2 (solo)
+
+## M 12/12/23
+
+	> Exercice tp_user_vuejs (solo)
+	> Correction demo-component-emit-2 (collectif)
+	> Demo provide_inject (collectif)
 	
 	
