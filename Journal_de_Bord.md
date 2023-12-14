@@ -202,5 +202,5 @@
 	> Exercice tp_user_vuejs (solo)
 	> Correction demo-component-emit-2 (collectif)
 	> Demo provide_inject (collectif)
-	
+	> Slot (cours)
 	
