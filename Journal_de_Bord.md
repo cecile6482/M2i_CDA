@@ -223,4 +223,4 @@
 	> tp_store_pinia
 	> correction tp_store_pinia
 	> VueJS + API (cours)
-	> tp_Rick_et_Morty
+	> tp_Rick_et_Morty 
