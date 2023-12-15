@@ -204,3 +204,20 @@
 	> Demo provide_inject (collectif)
 	> Slot (cours)
 	
+# M 13/12/23
+
+	> Slot (suite)
+	> slot-demo
+	> Routing (cours)
+	> tp_routing
+
+# J 14/12/23
+
+	> tp_routing (suite)
+	> correction tp_routing
+	> Store Pinia (cours)
+	> store-demo
+
+# V 15/12/23
+
+	> tp_store
