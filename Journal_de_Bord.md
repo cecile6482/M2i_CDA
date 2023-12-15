@@ -220,4 +220,7 @@
 
 # V 15/12/23
 
-	> tp_store
+	> tp_store_pinia
+	> correction tp_store_pinia
+	> VueJS + API (cours)
+	> tp_Rick_et_Morty

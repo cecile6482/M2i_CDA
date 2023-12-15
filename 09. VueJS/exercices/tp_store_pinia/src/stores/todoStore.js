@@ -13,7 +13,7 @@ export const useTodoStore = defineStore('todos', () => {
   function toggleFavorite(todoId) {
     const todo = todos.value.find(t => t.id === todoId);
     if (todo) {
-      todo.isFavorite = true;
+      todo.isFavorite = !todo.isFavorite;
     }
   }
 
