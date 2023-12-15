@@ -6,7 +6,6 @@ export const useTodoStore = defineStore('todos', () => {
 
   // Ajouter une nouvelle tâche
   function addTodo(todo) {
-    // Supposons que chaque todo ait une propriété 'id' unique et une propriété 'title'
     todos.value.push({ id: Date.now(), title: todo, isFavorite: false });
   }
 
@@ -14,7 +13,7 @@ export const useTodoStore = defineStore('todos', () => {
   function toggleFavorite(todoId) {
     const todo = todos.value.find(t => t.id === todoId);
     if (todo) {
-      todo.isFavorite = !todo.isFavorite;
+      todo.isFavorite = true;
     }
   }
 
@@ -22,9 +21,6 @@ export const useTodoStore = defineStore('todos', () => {
   function removeTodo(todoId) {
     todos.value = todos.value.filter(t => t.id !== todoId);
   }
-
-  // Filtre pour les tâches favorites
-  const favoriteTodos = computed(() => todos.value.filter(t => t.isFavorite));
 
   // Filtre pour afficher all ou favorites
   const filter = ref('all'); 
