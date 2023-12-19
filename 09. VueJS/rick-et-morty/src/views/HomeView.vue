@@ -1,77 +1,48 @@
 <script setup>
-import { onMounted, computed } from 'vue';
-import { useCharacterStore } from '../store/characterStore.js';
-import Header from '../components/Header.vue';
-import CharacterGrid from '../components/CharacterGrid.vue';
+import { ref } from 'vue';
+import Login from '../components/Login.vue';
+import Register from '../components/Register.vue';
 
-const store = useCharacterStore();
-
-const currentPage = computed(() => store.currentPage);
-const totalPages = computed(() => store.totalPages);
-
-onMounted(() => {
-  store.fetchCharacters();
-});
-
-const changePage = (page) => {
-  if (page > 0 && page <= totalPages.value) { 
-    store.changePage(page);
-  }
-};
-
+const showLogin = ref(true);
+const showRegister = ref(false);
 </script>
 
 <template>
-  <Header />
-
   <div class="page">
-    <div class="pagination-controls">
-      <button @click="changePage(currentPage - 1)" :disabled="currentPage <= 1">⟪</button>
-      <span>Page {{ currentPage }} sur {{ totalPages }}</span>
-      <button @click="changePage(currentPage + 1)" :disabled="currentPage >= totalPages">⟫</button>
+  <div class="container text-center">
+    <h1 class="text m-2">Rick & Morty</h1>
+    <button class="btn m-2" @click="showLogin = true; showRegister = false">Connexion</button>
+    <button class="btn m-2" @click="showLogin = false; showRegister = true">Inscription</button>
+    <div v-if="showLogin">
+      <Login />
     </div>
-
-    <CharacterGrid 
-    />
-
-    <div class="pagination-controls">
-      <button @click="changePage(currentPage - 1)" :disabled="currentPage <= 1">⟪</button>
-      <span>Page {{ currentPage }} sur {{ totalPages }}</span>
-      <button @click="changePage(currentPage + 1)" :disabled="currentPage >= totalPages">⟫</button>
+    <div v-if="showRegister">
+      <Register />
     </div>
   </div>
+  </div>  
 </template>
 
 <style scoped>
-.page {
-  background-color: #0b140e;
-  height: 200vh;
+.text {
+  color: #76d626;
+  font-family: 'Papyrus', fantasy;
+  font-size: 4rem;
+  padding-top: 30px;
 }
 
-.pagination-controls {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.pagination-controls button {
-  padding: 5px 5px;
-  margin: 0 15px;
-  background-color: #2c876f;
+.btn {
+  background-color: #76d626;
   border-color: #2c876f;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.pagination-controls button:disabled {
-  background-color: #ccc;
-  border: none;
-  cursor: default;
-}
-
-.pagination-controls span {
-  color: #2c876f;
+  color: #0b140e;
   font-family: 'Papyrus', fantasy;
 }
 
-</style> 
+.page {
+  background-color: #0b140e;
+  min-height: 100vh;
+  margin-top: 0;
+  padding-top: 0%;
+}
+
+</style>

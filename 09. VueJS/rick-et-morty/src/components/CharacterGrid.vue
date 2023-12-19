@@ -1,14 +1,28 @@
 <script setup>
-import { watchEffect, computed} from 'vue';
+import { watchEffect, computed, ref, onMounted} from 'vue';
+import { Modal } from 'bootstrap';
 import { useCharacterStore } from '../store/characterStore.js';
 import CharacterCard from './CharacterCard.vue';
 import CharacterDetails from './CharacterDetails.vue';
 
 const store = useCharacterStore();
 const characters = computed(() => store.characters);
+const showModalRef = ref(null);
 
+onMounted(() => {
+  showModalRef.value = new Modal(document.getElementById('characterDetailsModal'));
+});
+
+
+// Fonction pour afficher les détails du personnage dans un modal
 function showCharacterDetails(character) {
-  store.selectCharacter(character); // Met à jour le personnage sélectionné dans le store
+  store.selectCharacter(character);
+  showModalRef.value.show();
+}
+
+// Fonction pour fermer le modal
+function closeModal() {
+  showModalRef.value.hide();
 }
 
 // Utiliser watchEffect pour réagir aux changements dans le store
@@ -18,6 +32,7 @@ watchEffect(() => {
 </script>
 
 <template>
+  <div>
   <div class="character-grid">
     <CharacterCard 
       v-for="character in characters"
@@ -25,10 +40,29 @@ watchEffect(() => {
       :character="character"
       @click="showCharacterDetails(character)"
     />
-    <!-- Pas besoin de slot ici, juste passer la prop character -->
+  </div>
+  
+  <!-- <div class="character-details">
     <CharacterDetails 
       v-if="store.selectedCharacter"
       :character="store.selectedCharacter" />
+  </div> -->
+
+      <!-- Modal Bootstrap pour les détails du personnage -->
+      <div class="modal fade" id="characterDetailsModal" tabindex="-1" aria-labelledby="characterDetailsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="characterDetailsLabel">{{ store.selectedCharacter?.name }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="closeModal"></button>
+          </div>
+          <div class="modal-body">
+            <CharacterDetails v-if="store.selectedCharacter" :character="store.selectedCharacter" />
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -38,6 +72,12 @@ watchEffect(() => {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  padding: 30px;
+}
+
+.character-details {
+  display: flex;
+  justify-content: center;
   padding: 30px;
 }
 

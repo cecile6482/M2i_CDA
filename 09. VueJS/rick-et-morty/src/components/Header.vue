@@ -1,9 +1,36 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useCharacterStore } from '../store/characterStore';
+import { useAuthStore } from '../store/authStore';
+import { useRouter } from 'vue-router';
 
 const store = useCharacterStore();
 const filtersVisible = ref(false);
+
+const authStore = useAuthStore();
+const router = useRouter();
+
+onMounted(() => {
+  if (store.characters.length === 0) {
+    store.fetchCharacters();
+  }
+});
+
+const randomCharacterImage = computed(() => {
+  if (store.characters.length > 0) {
+    const randomIndex = Math.floor(Math.random() * store.characters.length);
+    return store.characters[randomIndex].image;
+  }
+  return null; // Ou une image par défaut
+});
+
+const username = computed(() => authStore.user?.username || 'Invité');
+
+function logout() {
+  authStore.logout();
+  // Redirection vers HomeView après déconnexion
+  router.push('/');
+}
 
 const toggleFilters = () => {
   filtersVisible.value = !filtersVisible.value;
@@ -36,6 +63,22 @@ const clearFilters = () => {
 
 <template>
   <div class="top-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img :src="randomCharacterImage" alt="Character Image" class="rounded-circle" style="width: 50px; height: 50px;">
+          <span class="profil">{{ username }}</span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Compte</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#" @click="logout">Se déconnecter</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
   <h1>Rick & Morty</h1>  
   <button @click="toggleFilters">⩔</button>
   </div>
@@ -107,8 +150,15 @@ const clearFilters = () => {
 </template>
 
 <style scoped>
+.profil {
+  color: #0b140e;
+  font-family: 'Papyrus', fantasy;
+  font-size: 1.2rem;
+  margin-left: 15px;
+}
+
 .top-header {
-  background-color: #2c876f;
+  background-color: #76d626;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,10 +168,11 @@ const clearFilters = () => {
 }
 
 .top-header h1 {
-  color: #2aef86;
+  color: #0b140e;
   font-family: 'Papyrus', fantasy;
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
+  padding-top: 20px;
 }
 
 .top-header button {
@@ -131,11 +182,44 @@ const clearFilters = () => {
   width: 200px;
   border: none;
   background: none;
-  color: #2aef86;
+  color: #0b140e;
+}
+
+nav {
+  background-color: #CED626;
+  color: #0b140e;
+  width: 0%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+a.nav-link {
+  background-color: #CED626;
+  color: #0b140e;
+  border-radius: 50px;
+  width: 100%;
+  margin-left: 30vw;
+  cursor: pointer;
+}
+
+ul.dropdown-menu {
+  background-color: #CED626;
+  color: #76d626;
+  width: 50%;
+  margin-left: 30vw;
+  cursor: pointer;
+}
+
+.dropdown-item {
+  background-color: #CED626;
+  color: #0b140e;;
+  width: 70%;
+  cursor: pointer;
 }
 
 .header {
-  background-color: #2c876f;
+  background-color: #91E04F;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -145,7 +229,7 @@ const clearFilters = () => {
 }
 
 .header h1 {
-  color: #2aef86;
+  color: #0b140e;
   font-family: 'Papyrus', fantasy;
   font-size: 2em;
 }
@@ -169,7 +253,7 @@ const clearFilters = () => {
 }
 
 .header .dropdown span {
-  color: #2aef86;
+  color: #0b140e;
   font-family: 'Papyrus', fantasy;
   font-size: 1.1em;
   margin-right: 50px;

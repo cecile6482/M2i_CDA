@@ -31,7 +31,7 @@ const props = defineProps({
   width: 100%;
   max-width: 600px;
   padding: 20px;
-  background-color: #adbdbd;
+  background-color: #CED626;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(251, 252, 251, 0.761);
   font-family: 'Papyrus', fantasy;

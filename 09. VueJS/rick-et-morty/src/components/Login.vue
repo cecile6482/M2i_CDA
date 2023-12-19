@@ -3,11 +3,11 @@ import { ref } from 'vue';
 import { useAuthStore } from '../store/authStore';
 import { useRouter } from 'vue-router';
 
-
 const email = ref('');
 const password = ref('');
 const authStore = useAuthStore();
 const router = useRouter();
+
 
 const login = () => {
   console.log('Login:', email.value, password.value);
@@ -27,7 +27,7 @@ const login = () => {
 
 <template>
   <div class="container">
-    <h2 class="text-red">Connexion</h2>
+    <h2 class="text">Connexion</h2>
     <form @submit.prevent="login">
       <div class="mb-3">
         <label for="email" class="form-label">Email:</label>
@@ -37,29 +37,41 @@ const login = () => {
         <label for="password" class="form-label">Mot de passe:</label>
         <input type="password" class="form-control" id="password" v-model="password" required>
       </div>
-      <button type="submit" class="btn btn-coral">Se connecter</button>
+      <button type="submit" class="btn">Se connecter</button>
     </form>
   </div>
 </template>
 
 <style scoped>
-.text-red {
-  color: #2c876f;
+.container {
+  margin-top: 10%;
+  border: 1px solid #76d626;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #76d626;
+  width: 40vw;
+  height: 50vh;
+}
+
+.text {
+  color: #0b140e;
   font-family: 'Papyrus', fantasy;
 }
-.btn-coral {
-  background-color: #2c876f;
+.btn {
+  background-color: #0b140e;
   border-color: #2c876f;
   color: #adbdbd;
+  font-family: 'Papyrus', fantasy;
+  margin-top: 50px;
 }
 
 .mb-3 {
-  color: #adbdbd;
+  color: #0b140e;
   font-family: 'Papyrus', fantasy; 
 }
 
 .mb-3 input {
-  background-color: #adadad; 
+  background-color: whitesmoke; 
   border: none
 }
 
