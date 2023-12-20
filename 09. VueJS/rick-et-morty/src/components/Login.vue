@@ -45,10 +45,10 @@ const login = () => {
 <style scoped>
 .container {
   margin-top: 10%;
-  border: 1px solid #76d626;
+  border: 1px solid #d3e364;
   border-radius: 10px;
   padding: 20px;
-  background-color: #76d626;
+  background-color: #d3e364;
   width: 40vw;
   height: 50vh;
 }

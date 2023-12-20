@@ -45,7 +45,7 @@ const changePage = (page) => {
 <style scoped>
 .page {
   background-color: #0b140e;
-  height: 230vh;
+  height: 150vh;
 }
 
 .pagination-controls {
@@ -57,8 +57,8 @@ const changePage = (page) => {
 .pagination-controls button {
   padding: 5px 5px;
   margin: 0 15px;
-  background-color: #76d626;
-  border-color: #2c876f;
+  background-color: #d3e364;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -70,7 +70,7 @@ const changePage = (page) => {
 }
 
 .pagination-controls span {
-  color: #76d626;
+  color: #d3e364;
   font-family: 'Papyrus', fantasy;
 }
 

@@ -25,15 +25,15 @@ const showRegister = ref(false);
 
 <style scoped>
 .text {
-  color: #76d626;
+  color: #d3e364;
   font-family: 'Papyrus', fantasy;
   font-size: 4rem;
   padding-top: 30px;
 }
 
 .btn {
-  background-color: #76d626;
-  border-color: #2c876f;
+  background-color: #d3e364;
+  border: none;
   color: #0b140e;
   font-family: 'Papyrus', fantasy;
 }

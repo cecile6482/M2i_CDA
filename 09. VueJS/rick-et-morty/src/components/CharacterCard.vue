@@ -22,9 +22,9 @@ const props = defineProps({
   width: 180px;
   margin: 10px;
   padding: 10px;
-  background-color: #CED626;
+  background-color: #FBF976;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(73, 243, 93, 0.761);
+  box-shadow: 0 4px 8px rgb(255, 248, 121);
   text-align: center;
   font-family: 'Papyrus', fantasy;
 }

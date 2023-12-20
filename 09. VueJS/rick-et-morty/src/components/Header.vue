@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, reactive, watchEffect } from 'vue';
 import { useCharacterStore } from '../store/characterStore';
 import { useAuthStore } from '../store/authStore';
 import { useRouter } from 'vue-router';
@@ -9,6 +9,15 @@ const filtersVisible = ref(false);
 
 const authStore = useAuthStore();
 const router = useRouter();
+
+// Définir des références réactives pour les filtres
+const filterValues = reactive({
+  SearchQuery: '',  
+  statusFilter: '',
+  speciesFilter: '',
+  genderFilter: '',
+  typeFilter: '',
+});
 
 onMounted(() => {
   if (store.characters.length === 0) {
@@ -21,14 +30,13 @@ const randomCharacterImage = computed(() => {
     const randomIndex = Math.floor(Math.random() * store.characters.length);
     return store.characters[randomIndex].image;
   }
-  return null; // Ou une image par défaut
+  return null; 
 });
 
-const username = computed(() => authStore.user?.username || 'Invité');
+const username = computed(() => authStore.user?.username);
 
 function logout() {
   authStore.logout();
-  // Redirection vers HomeView après déconnexion
   router.push('/');
 }
 
@@ -38,6 +46,9 @@ const toggleFilters = () => {
 
 const updateSearch = (event) => {
   store.setSearchQuery(event.target.value);
+  if (store.currentPage !== 1) {
+    store.changePage(1);
+  }
 };
 
 const updateStatusFilter = (event) => {
@@ -58,11 +69,18 @@ const updateTypeFilter = (event) => {
 
 const clearFilters = () => {
   store.clearFilters();
+  filterValues.SearchQuery = '';
+  filterValues.statusFilter = '';
+  filterValues.speciesFilter = '';
+  filterValues.genderFilter = '';
+  filterValues.typeFilter = '';
 };
+
 </script>
 
 <template>
   <div class="top-header">
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
@@ -71,8 +89,6 @@ const clearFilters = () => {
           <span class="profil">{{ username }}</span>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">Compte</a></li>
-          <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="#" @click="logout">Se déconnecter</a></li>
         </ul>
       </li>
@@ -86,14 +102,14 @@ const clearFilters = () => {
   <div class="header" v-if="filtersVisible">
 
     <!-- Barre de recherche -->
-    <input type="text" placeholder="Search By Name" @input="updateSearch" />
+    <input type="text" placeholder="Search By Name" v-model="filterValues.SearchQuery" @input="updateSearch" />
     
     <div class="dropdown">
 
     <div class="filter">
     <!-- Dropdown pour le statut -->
     <span>Status</span>
-    <select @change="updateStatusFilter" v-model="statusFilter">
+    <select v-model="filterValues.statusFilter" @change="updateStatusFilter">
       <option value=""></option>
       <option value="alive">Alive</option>
       <option value="dead">Dead</option>
@@ -104,7 +120,7 @@ const clearFilters = () => {
     <!-- Dropdown pour l'espèce -->
     <div class="filter">
     <span>Species</span>
-    <select @change="updateSpeciesFilter">
+    <select v-model="filterValues.speciesFilter" @change="updateSpeciesFilter">
       <option value=""></option>
       <option value="human">Human</option>
       <option value="alien">Alien</option>
@@ -122,7 +138,7 @@ const clearFilters = () => {
     <!-- Dropdown pour le type (vide pour l'instant) -->
     <div class="filter">
     <span>Types  </span>
-    <select @change="updateTypeFilter">
+    <select v-model="filterValues.typeFilter" @change="updateTypeFilter">
       <option value="">-</option>
     </select>
     </div>
@@ -130,7 +146,7 @@ const clearFilters = () => {
     <!-- Dropdown pour le genre -->
     <div class="filter">
     <span>Gender</span>
-    <select @change="updateGenderFilter">
+    <select v-model="filterValues.genderFilter" @change="updateGenderFilter">
       <option value=""></option>
       <option value="male">Male</option>
       <option value="female">Female</option>
@@ -158,13 +174,11 @@ const clearFilters = () => {
 }
 
 .top-header {
-  background-color: #76d626;
+  background-color: #d3e364;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
 }
 
 .top-header h1 {
@@ -172,11 +186,9 @@ const clearFilters = () => {
   font-family: 'Papyrus', fantasy;
   font-size: 3em;
   text-align: center;
-  padding-top: 20px;
 }
 
 .top-header button {
-  margin: 10px;
   font-size: 2em;
   cursor: pointer;
   width: 200px;
@@ -186,25 +198,25 @@ const clearFilters = () => {
 }
 
 nav {
-  background-color: #CED626;
+  background-color: #FBF976;
   color: #0b140e;
   width: 0%;
-  padding: 0;
-  margin: 0;
+  margin-top: 20px;
   cursor: pointer;
+  padding: 0;
 }
 
 a.nav-link {
-  background-color: #CED626;
+  background-color: #FBF976;
   color: #0b140e;
   border-radius: 50px;
   width: 100%;
-  margin-left: 30vw;
+  margin-left: 37vw;
   cursor: pointer;
 }
 
 ul.dropdown-menu {
-  background-color: #CED626;
+  background-color: #FBF976;
   color: #76d626;
   width: 50%;
   margin-left: 30vw;
@@ -212,14 +224,14 @@ ul.dropdown-menu {
 }
 
 .dropdown-item {
-  background-color: #CED626;
+  background-color: #FBF976;
   color: #0b140e;;
   width: 70%;
   cursor: pointer;
 }
 
 .header {
-  background-color: #91E04F;
+  background-color: #FBF976;
   display: flex;
   flex-direction: column;
   justify-content: center;

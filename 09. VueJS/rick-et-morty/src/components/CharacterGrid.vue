@@ -53,8 +53,8 @@ watchEffect(() => {
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="characterDetailsLabel">{{ store.selectedCharacter?.name }}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="closeModal"></button>
+            <!-- <h5 class="modal-title" id="characterDetailsLabel">{{ store.selectedCharacter?.name }}</h5> -->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="closeModal">X</button>
           </div>
           <div class="modal-body">
             <CharacterDetails v-if="store.selectedCharacter" :character="store.selectedCharacter" />
@@ -79,6 +79,18 @@ watchEffect(() => {
   display: flex;
   justify-content: center;
   padding: 30px;
+}
+
+.modal-content {
+  background-color: #0b140e;
+}
+
+.modal-header {
+  border-bottom: 1px solid #d3e364;
+}
+
+.modal-header button {
+  color: #d3e364;
 }
 
 </style>
