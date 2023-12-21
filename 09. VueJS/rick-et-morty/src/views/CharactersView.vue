@@ -45,7 +45,7 @@ const changePage = (page) => {
 <style scoped>
 .page {
   background-color: #0b140e;
-  height: 150vh;
+  height: 100%;
 }
 
 .pagination-controls {

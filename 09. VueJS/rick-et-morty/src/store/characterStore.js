@@ -52,7 +52,7 @@ export const useCharacterStore = defineStore('character', {
     async fetchCharacters() {
       this.loading = true;
       try {
-         let url = `?page=${this.currentPage}`;
+         let url = `/character/?page=${this.currentPage}`;
         if (this.searchQuery) {
           url += `&name=${encodeURIComponent(this.searchQuery)}`;
         }

@@ -1,10 +1,12 @@
 <script setup>
-import { ref, computed, onMounted, reactive, watchEffect } from 'vue';
+import { ref, computed, onMounted, reactive } from 'vue';
 import { useCharacterStore } from '../store/characterStore';
 import { useAuthStore } from '../store/authStore';
+import { useEpisodeStore } from '../store/episodeStore';
 import { useRouter } from 'vue-router';
 
 const store = useCharacterStore();
+const episodeStore = useEpisodeStore();
 const filtersVisible = ref(false);
 
 const authStore = useAuthStore();
@@ -40,8 +42,23 @@ function logout() {
   router.push('/');
 }
 
+function episodes() {
+  episodeStore.fetchEpisodes();
+  router.push('/episodes');
+}
+
+function characters() {
+  store.fetchCharacters();
+  router.push('/characters');
+}
+
+// Les filtres sont uniquement visibles sur la page des personnages
 const toggleFilters = () => {
-  filtersVisible.value = !filtersVisible.value;
+    if (router.currentRoute.value.path === '/characters') {
+      filtersVisible.value = !filtersVisible.value;
+    } else {
+      filtersVisible.value = false;
+    }
 };
 
 const updateSearch = (event) => {
@@ -89,6 +106,8 @@ const clearFilters = () => {
           <span class="profil">{{ username }}</span>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#" @click="characters">Characters</a></li>
+          <li><a class="dropdown-item" href="#" @click="episodes">Episodes</a></li>
           <li><a class="dropdown-item" href="#" @click="logout">Se déconnecter</a></li>
         </ul>
       </li>

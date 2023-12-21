@@ -26,9 +26,7 @@ function closeModal() {
 }
 
 // Utiliser watchEffect pour réagir aux changements dans le store
-watchEffect(() => {
-  console.log('Characters:', characters.value);
-});
+watchEffect(() => {});
 </script>
 
 <template>
