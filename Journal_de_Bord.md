@@ -224,3 +224,15 @@
 	> correction tp_store_pinia
 	> VueJS + API (cours)
 	> tp_Rick_et_Morty 
+
+# L 18/12/23 - V 22/12/23 - Rick & Morty (solo)
+
+# L 25/12/23 - L 01/01/24 - Vacances
+
+# M 02/01/24 
+
+	> Présentation générale des bases de données
+	> Exercices bdd
+	> Introduction MCD 
+	
+
