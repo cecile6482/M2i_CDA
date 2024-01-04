@@ -234,5 +234,17 @@
 	> Présentation générale des bases de données
 	> Exercices bdd
 	> Introduction MCD 
-	
+	> Exercices MCD 
 
+# M 03/01/24
+
+	> Correction exercices MCD
+	> Normalisation BDD 
+	> Exercices Normalisation BDD
+	> Correction exercices Normalisation BDD
+	> MLD
+	> Exercices MLD
+
+# J 04/01/24
+
+	> Redis (cours)
